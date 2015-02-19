@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# TexBX Git (TeX Builder Extra)
+# author: Ondrej Sika <ondrej@ondrejsika.com>
+# license: MIT
+
+
+build_repo_path=$1
+
+cd $build_repo_path
+git --work-tree=$build_repo_path --git-dir=$build_repo_path/.git fetch --all
+git --work-tree=$build_repo_path --git-dir=$build_repo_path/.git checkout origin/master
+texb
+

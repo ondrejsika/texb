@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# TexB (TeX Builder)
+# author: Ondrej Sika <ondrej@ondrejsika.com>
+# license: MIT
+
+
+output=`cat _texb_output`
+source=`cat _texb_source`
+
+mkdir -p _build
+pdflatex -jobname=$output -output-directory=_build $source
+
