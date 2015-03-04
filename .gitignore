@@ -1,0 +1,8 @@
+*.swp
+*.deb
+
+.idea
+
+deb-package/usr/bin/texb
+deb-package/usr/bin/texbx-git
+
