@@ -5,8 +5,22 @@
 # license: MIT
 
 
+if [ ! -f _texb_output ]; then
+    echo "E: _texb_output file does not exists"
+    exit 1
+fi
+if [ ! -f _texb_source ]; then
+    echo "E: _texb_source file does not exists"
+    exit 1
+fi
+
 output=`cat _texb_output`
 source=`cat _texb_source`
+
+if [ ! -f $source ]; then
+    echo "E: $source file (from _texb_source) does not exists"
+    exit 1
+fi
 
 mkdir -p _build
 pdflatex -jobname=$output -output-directory=_build $source
